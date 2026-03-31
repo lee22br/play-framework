@@ -3,6 +3,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
+GET     /                                      controllers.HomeController.index()
 GET     /api/welcome                           controllers.HomeController.index()
 POST    /api/users                             controllers.HomeController.create(request: Request)
 
