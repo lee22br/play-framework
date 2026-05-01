@@ -1,4 +1,4 @@
-package controllers;
+package DTOs;
 
 import play.data.validation.Constraints;
 
