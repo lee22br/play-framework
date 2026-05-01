@@ -33,9 +33,8 @@ public class ProductController extends Controller {
         this.form = formFactory.form(ProductData.class);
         this.messagesApi = messagesApi;
         this.products = com.google.common.collect.Lists.newArrayList(
-                new Product("Data 1", 123),
-                new Product("Data 2", 456),
-                new Product("Data 3", 789)
+                new Product("Notebook Dell", 700),
+                new Product("Notebook Acer", 600)
         );
     }
 
