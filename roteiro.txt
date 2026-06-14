@@ -1,0 +1,27 @@
+Hello, class!
+
+Today we are going to analyze a very interesting case study about software engineering and interface design. Imagine building a monitoring tool so good that you use it yourselves to improve... the tool itself!
+
+That is exactly what Datadog does. They practice a culture known in the tech industry as "dogfooding" (as in "eating your own dog food"). I am going to show you how their design team uses the company's own products—specifically Real User Monitoring (RUM) and Datadog Logs—to make data-driven User Experience (UX) decisions, entirely moving away from guesswork.
+
+Let's take a look at three practical examples of how they applied this:
+
+1. Choosing the Perfect Font (Without Breaking the Layout)
+The Problem: The team needed to standardize the monospace font (the one used to display lines of code and logs) across the platform. The risk? If they chose a font that the user didn't have installed, the browser would try to adapt, running the risk of completely breaking the page layout.
+
+The Data-Driven Solution: Instead of just guessing the best option, they used RUM to map which fonts their user base already had installed on their machines. With this information, they chose a fallback font with identical dimensions to the most popular one. The result was a smooth transition with no negative visual impact on the interface.
+
+2. Less is More: Cleaning Up the Interface (DraggablePane)
+The Problem: The interface featured a resizable panel component that had tiny minimize and maximize buttons. The issue was that, visually, this made the screen look cluttered and complex.
+
+The Data-Driven Solution: Before simply deleting the buttons and risking user frustration, the team added tracking logs to the component. Guess what they discovered? Almost nobody clicked on them! Armed with mathematical proof that the buttons weren't needed, they removed them to clean up the design and replaced the functionality with a simple, intuitive "double-click."
+
+3. Learning from User Errors (DateRangePicker)
+The Problem: When the platform started allowing users to type in custom timeframes (instead of just selecting them from a calendar), the team noticed a sudden spike in "syntax errors." Searches were failing.
+
+The Data-Driven Solution: They started monitoring exactly what was being typed during those error moments. They found out that a large portion of users were trying to type the word "weeks" (for example, searching for "last 2 weeks"), a pattern that the system didn't know how to parse. The engineering team updated the code to understand this specific pattern, and instantly, the search error rate dropped by half.
+
+What is the Big Takeaway?
+The main conclusion for us, as future professionals in the field, is that data transforms opinions into facts.
+
+Because Datadog uses its own integrated tools to understand usability bottlenecks, the design and engineering teams are able to speak the same language. There are no lengthy arguments over "I think the button should go there"—they look at the data, validate the actual user behavior, and apply the improvements quickly and safely.
